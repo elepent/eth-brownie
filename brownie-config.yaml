@@ -1,0 +1,23 @@
+dependencies:
+  # - <organization/repo>@<version>
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+
+dotenv: .env
+networks:
+  rinkeby:
+    eth_usd_price_feed: '0x8A753747A1FA494EC906CE90E9F37563A8AF630E'
+    verify: True
+  development:
+    verify: False
+    # 新增了alchemy网络验证
+  mainnet-fork:
+    eth_usd_price_feed: '0xAc559F25B1619171CbC396a50854A3240b6A4e99'
+    verify: False
+  ganache-local:
+    verify: False
+wallets:
+  from_key: ${PRIVATE_KEY}
